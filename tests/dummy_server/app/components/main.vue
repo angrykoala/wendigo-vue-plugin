@@ -1,7 +1,7 @@
 <template>
     <div>
-        <input type="text" placeholder="enter text" v-model="value">
         <p>{{value}}</p>
+        <button @click="add">Add</button>
     </div>
 </template>
 
@@ -9,10 +9,15 @@
 "use strict";
 
 module.exports = {
-    data() {
-        return {
-            value: ''
-        };
+    computed: {
+        value() {
+            return this.$store.getters.getCount;
+        }
+    },
+    methods: {
+        add() {
+            this.$store.commit("addOne");
+        }
     }
 };
 </script>

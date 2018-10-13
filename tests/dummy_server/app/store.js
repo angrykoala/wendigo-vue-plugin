@@ -4,25 +4,20 @@ const Vuex = require('vuex');
 
 module.exports = new Vuex.Store({
     state: {
-        uid: null,
-        data: null,
-        password: null
+        count: 0,
+        user: {
+            uid: "42",
+            name: "arthur"
+        }
     },
     getters: {
-        getUser(state) {
-            return {
-                uid: state.uid,
-                data: state.data
-            }
+        getCount(state) {
+            return state.count;
         }
     },
     mutations: {
-        user(state, data) {
-            state.uid = data.uid;
-            state.data = data;
-        },
-        userPassword(state, password) {
-            state.password = password;
+        addOne(state) {
+            state.count += 1;
         }
     },
     actions: {

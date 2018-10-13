@@ -11,8 +11,13 @@ const router = require('./router');
 const store = require('./store');
 
 
-new Vue({ // eslint-disable-line
+window.Vue=new Vue({ // eslint-disable-line
     el: '#container',
+    data() {
+        return {
+            test: "hehe"
+        };
+    },
     store: store,
     router: router
 });
