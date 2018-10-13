@@ -1,10 +1,12 @@
 "use strict";
 
 const dummyServer = require('./dummy_server/index.js');
-const Wendigo = require('../lib/wendigo');
+const Wendigo = require('wendigo');
+const WendigoVuePlugin = require('../index.js');
 
 before(() => {
-    return dummyServer(3456);
+    Wendigo.registerPlugin(WendigoVuePlugin);
+    return dummyServer(3457);
 });
 
 after(async() => {

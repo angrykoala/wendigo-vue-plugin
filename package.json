@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha ./tests/**/*.test.js ./tests/hooks.js --exit",
     "lint": "eslint . --ext .js",
-    "build-test-server": "NODE_ENV='development' parcel build tests/dummy_server/app/index.html -d tests/dummy_server/dist --log-level='1'",
+    "build-test-server": "parcel build tests/dummy_server/app/*.html -d tests/dummy_server/dist --log-level='1'",
     "clean-test-server": "rm -rf tests/dummy_server/dist",
     "pretest": "npm run build-test-server",
     "posttest": "npm run clean-test-server"
@@ -41,9 +41,9 @@
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1",
-    "wendigo": "^1.4.0"
+    "wendigo": "^1.4.2"
   },
   "peerDependencies": {
-    "wendigo": "^1.4.0"
+    "wendigo": "^1.4.2"
   }
 }
