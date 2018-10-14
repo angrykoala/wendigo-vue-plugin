@@ -1,7 +1,7 @@
 /* global WendigoVuePlugin */
 "use strict";
 
-const {VueNotFoundError, FatalError} = require('./errors');
+const {VueNotFoundError, FatalError} = require('../errors');
 
 module.exports = class VueStore {
     constructor(plugin, browser) {

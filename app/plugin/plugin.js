@@ -2,7 +2,7 @@
 "use strict";
 
 const path = require('path');
-const config = require('../config');
+const config = require('../../config');
 const VueStore = require('./store');
 
 const injectionScriptsPath = config.injectionScripts.path;
