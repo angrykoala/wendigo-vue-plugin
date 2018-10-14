@@ -4,6 +4,7 @@
 
 const path = require('path');
 const config = require('../config');
+const VueStore = require('./store');
 
 const injectionScriptsPath = config.injectionScripts.path;
 const injectionScripts = config.injectionScripts.files;
@@ -11,6 +12,7 @@ const injectionScripts = config.injectionScripts.files;
 module.exports = class VuePlugin {
     constructor(browser) {
         this._browser = browser;
+        this.store = new VueStore(this, browser);
         this._vueDetected = false;
     }
 

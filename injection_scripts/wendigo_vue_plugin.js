@@ -13,10 +13,6 @@ if (!window.WendigoVuePlugin) {
             return Boolean(vue);
         },
 
-        getStore() {
-
-        },
-
         _detectFromNuxt() {
             if (window.$nuxt && window.$nuxt.$root) {
                 return window.$nuxt.$root;
