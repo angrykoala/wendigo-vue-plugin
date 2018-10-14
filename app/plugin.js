@@ -1,5 +1,4 @@
 /* global WendigoVuePlugin */
-
 "use strict";
 
 const path = require('path');

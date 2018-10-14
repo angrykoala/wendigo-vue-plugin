@@ -19,6 +19,15 @@ module.exports = class VueStore {
         }, key);
     }
 
+    getter(key) {
+        this._validateAction();
+        return this._browser.evaluate((k) => {
+            const store = WendigoVuePlugin.vue.$store;
+            if (!store) return null;
+            return store.getters[k];
+        }, key);
+    }
+
     commit(name, data) {
         this._validateAction();
         return this._browser.evaluate((n, d) => {
