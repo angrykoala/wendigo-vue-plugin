@@ -10,6 +10,6 @@ class VueNotFoundError extends FatalError {
 }
 
 module.exports = {
-    VueNotFoundError: VueNotFoundError
-
+    VueNotFoundError: VueNotFoundError,
+    FatalError: FatalError
 };

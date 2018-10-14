@@ -21,6 +21,10 @@ module.exports = new Vuex.Store({
         }
     },
     actions: {
-
+        addTwoAction(context) {
+            context.commit("addOne");
+            context.commit("addOne");
+            return context.state.count;
+        }
     }
 });

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{value}}</p>
+        <p id="count">{{value}}</p>
         <button @click="add">Add</button>
     </div>
 </template>
