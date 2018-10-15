@@ -127,6 +127,8 @@ describe("Vue Store", function() {
         }, `VueNotFoundError: Vue not detected.`);
     });
 
+    it("Dispatch With Promise Error");
+
     it("Getter", async() => {
         const count = await browser.vue.store.getter("getCount");
         assert.strictEqual(count, 0);

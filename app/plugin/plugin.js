@@ -16,7 +16,7 @@ module.exports = class VuePlugin {
     }
 
     get detected() {
-        return this._vueDetected;
+        return Boolean(this._vueDetected);
     }
 
 
