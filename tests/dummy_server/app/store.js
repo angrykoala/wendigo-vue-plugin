@@ -25,6 +25,9 @@ module.exports = new Vuex.Store({
             context.commit("addOne");
             context.commit("addOne");
             return context.state.count;
+        },
+        actionError() {
+            return Promise.reject("ActionError");
         }
     }
 });
