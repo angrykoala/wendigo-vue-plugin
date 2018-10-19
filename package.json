@@ -32,7 +32,7 @@
   "homepage": "https://github.com/angrykoala/wendigo-vue-plugin#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
-    "eslint": "^5.6.1",
+    "eslint": "^5.7.0",
     "eslint-plugin-vue": "^4.7.1",
     "express": "^4.16.4",
     "mocha": "^5.2.0",
@@ -41,9 +41,9 @@
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1",
-    "wendigo": "^1.5.0"
+    "wendigo": "^1.5.2"
   },
   "peerDependencies": {
-    "wendigo": "^1.5.0"
+    "wendigo": "^1.5.2"
   }
 }

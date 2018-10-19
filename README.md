@@ -5,18 +5,15 @@ _by @angrykoala_
 
 A [Wendigo](https://github.com/angrykoala/wendigo) plugin for [Vue.js](https://vuejs.org/) pages.
 
-> This plugin requires Wendigo 1.4.3 or superior
+> This plugin requires Wendigo 1.5.2 or superior
 
 **Contents**
 * [Getting Started](#getting-started)
 * [Plugin](#plugin)
   * [Store](#store)
   * [Router](#router)
-  * [Component](#component)
 * [Assertions](#assertions)
     * [Store Assertions](#store-assertions)
-    * [Router Assertions](#router-assertions)
-    * [Component Assertions](#component-assertions)
 * [Development](#development)
 * [Troubleshooting](#troubleshooting)
 * [License](#license)
@@ -85,7 +82,7 @@ Executes the action with given name, returns the promise returned by the action.
 await browser.vue.dispatch("userUpdateAndGetId"); // 2345
 ```
 
-> Keep in mind that, unlike in Vuex, all methods are asynchronous and return promises
+> Keep in mind that, unlike in Vuex, all methods are asynchronous and return promises.
 
 ### Router
 This module allow to execute actions and get information about [vue-router](https://router.vuejs.org)
@@ -96,9 +93,9 @@ Returns all routes defined in the router, each route contains the following attr
 * **path**: The path the route is active (e.g `/page2`, `*`).
 * **redirect**: The path the route is redirecting to, if any.
 
-### Component
-
-> TODO
+```js
+const routes = await browser.vue.router.getAll();
+```
 
 
 ## Assertions
@@ -127,12 +124,6 @@ await browser.assert.vue.store.state("count", 0);
 
 **getter(key, expected, msg?)**
 Asserts that the getter with given key has the expected value.
-
-### Router Assertions
-> TODO
-
-### Component Assertions
-> TODO
 
 ## Injected Scripts
 Along with the scripts injected by Wendigo, this plugin required to inject some js scripts into the web to work properly. All these scripts are injected under the global object `WendigoVuePlugin`, and can be accessed by using `browser.evaluate()`.
