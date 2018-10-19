@@ -1,14 +1,9 @@
 /* global WendigoVuePlugin */
 "use strict";
 
-const {VueNotFoundError, FatalError} = require('../errors');
+const VueModule = require('./vue_module');
 
-module.exports = class VueStore {
-    constructor(plugin, browser) {
-        this._plugin = plugin;
-        this._browser = browser;
-    }
-
+module.exports = class VueStore extends VueModule {
     getState(key) {
         this._validateAction();
         return this._browser.evaluate((k) => {
@@ -42,11 +37,5 @@ module.exports = class VueStore {
             const store = WendigoVuePlugin.vue.$store;
             return store.dispatch(n, d);
         }, name, data);
-    }
-
-
-    _validateAction() {
-        if (!this._browser.loaded) throw new FatalError(`Cannot perform action before opening a page.`);  // eslint-disable-line
-        if (!this._plugin.detected) throw new VueNotFoundError();
     }
 };

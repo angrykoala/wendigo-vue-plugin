@@ -1,4 +1,5 @@
-# wendigo-vue-plugin
+Wendigo Vue Plugin
+==================
 _by @angrykoala_    
 
 
@@ -87,8 +88,13 @@ await browser.vue.dispatch("userUpdateAndGetId"); // 2345
 > Keep in mind that, unlike in Vuex, all methods are asynchronous and return promises
 
 ### Router
+This module allow to execute actions and get information about [vue-router](https://router.vuejs.org)
 
-> TODO
+**getAll()**  
+Returns all routes defined in the router, each route contains the following attributes:
+* **name**: The name defined for the route, if any.
+* **path**: The path the route is active (e.g `/page2`, `*`).
+* **redirect**: The path the route is redirecting to, if any.
 
 ### Component
 
