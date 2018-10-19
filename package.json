@@ -1,0 +1,49 @@
+{
+  "name": "wendigo-vue-plugin",
+  "version": "0.1.0",
+  "description": "Plugin for Wendigo with Vue integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests/**/*.test.js ./tests/hooks.js --exit",
+    "lint": "eslint . --ext .js",
+    "build-test-server": "parcel build tests/dummy_server/app/*.html -d tests/dummy_server/dist --log-level='1'",
+    "clean-test-server": "rm -rf tests/dummy_server/dist",
+    "pretest": "npm run build-test-server",
+    "posttest": "npm run clean-test-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angrykoala/wendigo-vue-plugin.git"
+  },
+  "keywords": [
+    "wendigo",
+    "test",
+    "headless",
+    "vue",
+    "testing",
+    "browser",
+    "automation"
+  ],
+  "author": "angrykoala <angrykoala@outlook.es>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/angrykoala/wendigo-vue-plugin/issues"
+  },
+  "homepage": "https://github.com/angrykoala/wendigo-vue-plugin#readme",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "eslint": "^5.7.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "parcel": "^1.10.3",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.17",
+    "vuex": "^3.0.1",
+    "wendigo": "^1.5.2"
+  },
+  "peerDependencies": {
+    "wendigo": "^1.5.2"
+  }
+}

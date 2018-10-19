@@ -1,0 +1,7 @@
+{
+    "urls": {
+        "index": "http://localhost:3457/",
+        "another": "http://localhost:3457/another",
+        "notVue": "http://localhost:3457/not_vue.html"
+    }
+}
