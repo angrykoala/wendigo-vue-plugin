@@ -11,12 +11,16 @@ const injectionScripts = config.injectionScripts.files;
 module.exports = class VuePlugin {
     constructor(browser) {
         this._browser = browser;
-        this.store = new VueStore(this, browser);
+        this._store = new VueStore(this, browser);
         this._vueDetected = false;
     }
 
     get detected() {
         return Boolean(this._vueDetected);
+    }
+
+    get store() {
+        return this._store;
     }
 
 

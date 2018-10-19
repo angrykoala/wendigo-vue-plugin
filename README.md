@@ -110,8 +110,17 @@ await browser.assert.vue.detected();
 Asserts that Vue.js is not detected in page.
 
 ### Store Assertions
+Assertions regarding Vuex store, these can be accessed through `browser.assertions.vue.store`.
 
-> TODO
+**state(key, expected, msg?)**  
+Asserts that the state element with given key has the expected value.
+
+```js
+await browser.assert.vue.store.state("count", 0);
+```
+
+**getter(key, expected, msg?)**
+Asserts that the getter with given key has the expected value.
 
 ### Router Assertions
 > TODO
