@@ -30,14 +30,14 @@ describe("Vue Routes", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.vue.router.getAll();
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [vue.router.getAll] Vue not detected.`);
     });
 
     it("Get All Routes Before Open", async() => {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.vue.router.getAll();
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [vue.router.getAll] Cannot perform action before opening a page.`);
 
         browser2.close();
     });

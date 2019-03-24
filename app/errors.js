@@ -2,10 +2,9 @@
 
 const {FatalError} = require('wendigo').Errors;
 
-
 class VueNotFoundError extends FatalError {
-    constructor() {
-        super("Vue not detected.");
+    constructor(name) {
+        super(name, "Vue not detected.");
     }
 }
 

@@ -2,25 +2,25 @@
     "env": {
         "mocha": true,
         "node": true,
-        "browser": true
+        "browser": true,
+        "es6": true
     },
     "parserOptions": {
         "ecmaVersion": 8,
         "sourceType": "script"
     },
-    "plugins": ["vue"],
+    "plugins": [],
     "globals": {},
     "extends": [
-        "eslint:recommended",
-        "plugin:vue/recommended"
+        "eslint:recommended"
     ],
     "rules": {
-        "no-await-in-loop": "warn",
+        "no-await-in-loop": "off",
         "no-template-curly-in-string": "warn",
         "require-atomic-updates": "error",
-        "array-callback-return": "warn",
+        "array-callback-return": "off",
         "block-scoped-var": "error",
-        "complexity": ["warn", 6],
+        "complexity": ["warn", 8],
         "dot-notation": "error",
         "dot-location": ["error", "property"],
         "eqeqeq": ["error", "always"],
@@ -61,9 +61,7 @@
         "no-shadow": "warn",
         "no-use-before-define": "warn",
         "no-new-require": "error",
-        "array-bracket-newline": ["warn", "never"],
         "array-bracket-spacing": ["warn", "never"],
-        "array-element-newline": ["warn", "never"],
         "block-spacing": "warn",
         "brace-style": "error",
         "camelcase": "error",
@@ -87,9 +85,9 @@
         }],
         "lines-between-class-members": ["error", "always"],
         "max-depth": ["error", 6],
-        "max-len": ["warn", 200],
-        "max-lines": ["warn", 300],
-        "max-nested-callbacks": ["error", 3],
+        "max-len": ["warn", 180],
+        "max-lines": ["error", 400],
+        "max-nested-callbacks": ["error", 4],
         "max-params": ["error", 4],
         "new-cap": "error",
         "new-parens": "error",
@@ -103,7 +101,7 @@
         "no-nested-ternary": "warn",
         "no-new-object": "error",
         "no-trailing-spaces": "warn",
-        "no-underscore-dangle": ["error", {
+        "no-underscore-dangle": ["off", {
             "allowAfterThis": true,
             "allowAfterSuper": true
         }],
@@ -125,17 +123,6 @@
         "no-useless-constructor": "warn",
         "space-infix-ops": "warn",
         "no-var": "error",
-        "prefer-const": "warn",
-
-        "vue/no-v-html": "error",
-        "vue/max-attributes-per-line": "off",
-        "vue/attributes-order": "off",
-        "vue/attribute-hyphenation": "off",
-        "vue/html-indent": ["error", 4, {
-            "attribute": 1,
-            "closeBracket": 0,
-            "ignores": []
-        }],
-        "vue/mustache-interpolation-spacing": ["warn", "never"]
+        "prefer-const": "warn"
     }
 }

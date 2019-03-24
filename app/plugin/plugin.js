@@ -29,7 +29,6 @@ module.exports = class VuePlugin {
         return this._router;
     }
 
-
     _afterOpen() {
         const promises = injectionScripts.map((s) => {
             return this._browser.page.addScriptTag({ // Not using wrapper as this is before loaded is true

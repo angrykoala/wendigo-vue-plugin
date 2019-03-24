@@ -1,11 +1,14 @@
 Wendigo Vue Plugin
 ==================
-_by @angrykoala_    
+_by @angrykoala_
+
+[![npm version](https://badge.fury.io/js/wendigo-vue-plugin.svg)](https://badge.fury.io/js/wendigo-vue-plugin)
+[![Build Status](https://travis-ci.org/angrykoala/wendigo-vue-plugin.svg?branch=master)](https://travis-ci.org/angrykoala/wendigo-vue-plugin)
 
 
 A [Wendigo](https://github.com/angrykoala/wendigo) plugin for [Vue.js](https://vuejs.org/) pages.
 
-> This plugin requires Wendigo 1.5.2 or superior
+> This plugin requires Wendigo 1.11.0 or superior
 
 **Contents**
 * [Getting Started](#getting-started)

@@ -1,7 +1,13 @@
+0.2.0 / 2018-03-24
+==================
+
+* Dependencies updated
+* Errors updated to work with Wendigo 1.11.0
+
 0.1.0 / 2018-10-19
 ==================
 
-  * Vue router get all routes
-  * Vue store actions
-  * Vue store assertions
-  * Detect vue in opened page
+* Vue router get all routes
+* Vue store actions
+* Vue store assertions
+* Detect vue in opened page

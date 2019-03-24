@@ -1,6 +1,7 @@
 "use strict";
 
 const {AssertionError} = require('./errors');
+
 module.exports = {
     invertify(cb, msg) {
         return cb().then(() => {

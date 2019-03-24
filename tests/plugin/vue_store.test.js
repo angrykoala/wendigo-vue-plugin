@@ -43,14 +43,14 @@ describe("Vue Store", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.vue.store.getState();
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [vue.store.getState] Vue not detected.`);
     });
 
     it("Get Store State Before Open", async() => {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.vue.store.getState("count");
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [vue.store.getState] Cannot perform action before opening a page.`);
 
         browser2.close();
     });
@@ -77,14 +77,14 @@ describe("Vue Store", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.vue.store.commit("addOne");
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [vue.store.commit] Vue not detected.`);
     });
 
     it("Commit Before Open", async() => {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.vue.store.commit("addOne");
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [vue.store.commit] Cannot perform action before opening a page.`);
 
         browser2.close();
     });
@@ -116,7 +116,7 @@ describe("Vue Store", function() {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.vue.store.dispatch("addTwoAction");
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [vue.store.dispatch] Cannot perform action before opening a page.`);
         browser2.close();
     });
 
@@ -124,7 +124,7 @@ describe("Vue Store", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.vue.store.dispatch("addTwoAction");
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [vue.store.dispatch] Vue not detected.`);
     });
 
     it("Dispatch With Promise Error", async() => {
@@ -143,7 +143,7 @@ describe("Vue Store", function() {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.vue.store.getter("getCount");
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [vue.store.getter] Cannot perform action before opening a page.`);
         browser2.close();
     });
 
@@ -151,6 +151,6 @@ describe("Vue Store", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.vue.store.getter("getCount");
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [vue.store.getter] Vue not detected.`);
     });
 });
