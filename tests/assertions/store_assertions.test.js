@@ -28,19 +28,19 @@ describe("Vue Store", function() {
     it("Assert Store State Fails", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.state("count", 2);
-        }, `Expected state "count" to be "2", "0" found.`);
+        }, `[assert.vue.store.state] Expected state "count" to be "2", "0" found.`);
     });
 
     it("Assert Store State Fails, Key Doesn't Exists", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.state("notValue", 2);
-        }, `Expected state "notValue" to be "2", "undefined" found.`);
+        }, `[assert.vue.store.state] Expected state "notValue" to be "2", "undefined" found.`);
     });
 
     it("Assert Store State Fails Custom Message", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.state("count", 2, "state fails");
-        }, `state fails`);
+        }, `[assert.vue.store.state] state fails`);
     });
 
     it("Assert Store State Object", async() => {
@@ -56,21 +56,21 @@ describe("Vue Store", function() {
                 uid: "45",
                 name: "arthur2"
             });
-        }, `Expected state "user" to be "{"uid":"45","name":"arthur2"}", "{"uid":"42","name":"arthur"}" found.`);
+        }, `[assert.vue.store.state] Expected state "user" to be "{"uid":"45","name":"arthur2"}", "{"uid":"42","name":"arthur"}" found.`);
     });
 
     it("Vue Not Detected Error In State", async() => {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.assert.vue.store.state("count", 0);
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [assert.vue.store.state] Vue not detected.`);
     });
 
     it("Assert Store State Before Open", async() => {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.assert.vue.store.state("count", 0);
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [assert.vue.store.state] Cannot perform action before opening a page.`);
 
         browser2.close();
     });
@@ -87,33 +87,33 @@ describe("Vue Store", function() {
     it("Assert Store Getter Fails", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.getter("getCount", 2);
-        }, `Expected getter "getCount" to be "2", "0" found.`);
+        }, `[assert.vue.store.getter] Expected getter "getCount" to be "2", "0" found.`);
     });
 
     it("Assert Store Getter Fails, Key Doesn't Exists", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.getter("notValue", 2);
-        }, `Expected getter "notValue" to be "2", "undefined" found.`);
+        }, `[assert.vue.store.getter] Expected getter "notValue" to be "2", "undefined" found.`);
     });
 
     it("Assert Store Getter Fails Custom Message", async() => {
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.store.getter("getCount", 2, "getter fails");
-        }, `getter fails`);
+        }, `[assert.vue.store.getter] getter fails`);
     });
 
     it("Vue Not Detected Error In Getter", async() => {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAsync(async() => {
             await browser.assert.vue.store.getter("getCount", 0);
-        }, `VueNotFoundError: Vue not detected.`);
+        }, `VueNotFoundError: [assert.vue.store.getter] Vue not detected.`);
     });
 
     it("Assert Store Getter Before Open", async() => {
         const browser2 = await Wendigo.createBrowser();
         await utils.assertThrowsAsync(async() => {
             await browser2.assert.vue.store.getter("getCount", 0);
-        }, `FatalError: Cannot perform action before opening a page.`);
+        }, `FatalError: [assert.vue.store.getter] Cannot perform action before opening a page.`);
 
         browser2.close();
     });

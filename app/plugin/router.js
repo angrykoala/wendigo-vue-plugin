@@ -6,7 +6,7 @@ const Route = require('../models/route');
 
 module.exports = class VueStore extends VueModule {
     getAll() {
-        this._validateAction();
+        this._validateAction("vue.router.getAll");
         return this._browser.evaluate(() => {
             const items = [];
             WendigoVuePlugin.vue.$router.options.routes.forEach(route => {

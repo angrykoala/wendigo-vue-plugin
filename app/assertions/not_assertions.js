@@ -9,6 +9,6 @@ module.exports = class VueAssertions {
     }
 
     detected() {
-        if (this._plugin.detected) throw new AssertionError("Expected Vue to not be detected.");
+        if (this._plugin.detected) throw new AssertionError("assert.vue.not.detected", "Expected Vue to not be detected.");
     }
 };

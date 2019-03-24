@@ -25,7 +25,7 @@ describe("Base Assertions", function() {
         await browser.open(configUrls.notVue);
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.detected();
-        }, `Vue not detected.`);
+        }, `[assert.vue.detected] Vue not detected.`);
     });
 
     it("Vue Is Not Detected", async() => {
@@ -37,6 +37,6 @@ describe("Base Assertions", function() {
         await browser.open(configUrls.index);
         await utils.assertThrowsAssertionAsync(async() => {
             await browser.assert.vue.not.detected();
-        }, `Expected Vue to not be detected.`);
+        }, `[assert.vue.not.detected] Expected Vue to not be detected.`);
     });
 });

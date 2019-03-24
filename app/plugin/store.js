@@ -5,7 +5,7 @@ const VueModule = require('./vue_module');
 
 module.exports = class VueStore extends VueModule {
     getState(key) {
-        this._validateAction();
+        this._validateAction("vue.store.getState");
         return this._browser.evaluate((k) => {
             const store = WendigoVuePlugin.vue.$store;
             if (!store) return null;
@@ -15,7 +15,7 @@ module.exports = class VueStore extends VueModule {
     }
 
     getter(key) {
-        this._validateAction();
+        this._validateAction("vue.store.getter");
         return this._browser.evaluate((k) => {
             const store = WendigoVuePlugin.vue.$store;
             if (!store) return null;
@@ -24,7 +24,7 @@ module.exports = class VueStore extends VueModule {
     }
 
     commit(name, data) {
-        this._validateAction();
+        this._validateAction("vue.store.commit");
         return this._browser.evaluate((n, d) => {
             const store = WendigoVuePlugin.vue.$store;
             return store.commit(n, d);
@@ -32,7 +32,7 @@ module.exports = class VueStore extends VueModule {
     }
 
     dispatch(name, data) {
-        this._validateAction();
+        this._validateAction("vue.store.dispatch");
         return this._browser.evaluate((n, d) => {
             const store = WendigoVuePlugin.vue.$store;
             return store.dispatch(n, d);

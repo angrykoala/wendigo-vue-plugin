@@ -8,8 +8,8 @@ module.exports = class VueModule {
         this._browser = browser;
     }
 
-    _validateAction() {
-        if (!this._browser.loaded) throw new FatalError(`Cannot perform action before opening a page.`);  // eslint-disable-line
-        if (!this._plugin.detected) throw new VueNotFoundError();
+    _validateAction(name) {
+        if (!this._browser.loaded) throw new FatalError(name, `Cannot perform action before opening a page.`);  // eslint-disable-line
+        if (!this._plugin.detected) throw new VueNotFoundError(name, );
     }
 };
