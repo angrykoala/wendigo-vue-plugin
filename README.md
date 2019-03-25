@@ -58,8 +58,8 @@ The store module allows to access and modify [Vuex](https://vuex.vuejs.org) stor
 Returns the state of the given key, if no key is set, the whole state of the store will be returned.
 
 ```js
-await browser.vue.getState("user"); // { id: 1234, email:"foo@bar.com" }
-await browser.vue.getState(); // { user: { ... }, msg: ["My Msg"] }
+await browser.vue.store.getState("user"); // { id: 1234, email:"foo@bar.com" }
+await browser.vue..store.getState(); // { user: { ... }, msg: ["My Msg"] }
 ```
 
 > The state must be serializable and it cannot be modified
@@ -68,21 +68,21 @@ await browser.vue.getState(); // { user: { ... }, msg: ["My Msg"] }
 Executes and returns the getter with given key:
 
 ```js
-await browser.vue.getter("userEmail"); // "foo@bar.com"
+await browser.vue.store.getter("userEmail"); // "foo@bar.com"
 ```
 
 **commit(name, data?)**  
 Executes the mutation with given name, passing the data object as argument.
 
 ```js
-await browser.vue.commit("updateUser", { id:1234, email: "bar@foo,com"})
+await browser.vue.store.commit("updateUser", { id:1234, email: "bar@foo,com"})
 ```
 
 **dispatch(name, data?)**  
 Executes the action with given name, returns the promise returned by the action.
 
 ```js
-await browser.vue.dispatch("userUpdateAndGetId"); // 2345
+await browser.vue.store.dispatch("userUpdateAndGetId"); // 2345
 ```
 
 > Keep in mind that, unlike in Vuex, all methods are asynchronous and return promises.
