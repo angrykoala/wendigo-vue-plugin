@@ -8,7 +8,7 @@ _by @angrykoala_
 
 A [Wendigo](https://github.com/angrykoala/wendigo) plugin for [Vue.js](https://vuejs.org/) pages.
 
-> This plugin requires Wendigo 1.11.0 or superior
+> This plugin is intended to be used with Wendigo 2
 
 **Contents**
 * [Getting Started](#getting-started)

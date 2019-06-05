@@ -1,6 +1,6 @@
 {
   "name": "wendigo-vue-plugin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Plugin for Wendigo with Vue integration",
   "main": "index.js",
   "scripts": {
@@ -31,19 +31,19 @@
   },
   "homepage": "https://github.com/angrykoala/wendigo-vue-plugin#readme",
   "devDependencies": {
-    "@vue/component-compiler-utils": "^2.6.0",
-    "eslint": "^5.15.3",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
-    "express": "^4.16.4",
-    "mocha": "^6.0.2",
+    "express": "^4.17.1",
+    "mocha": "^6.1.4",
     "parcel": "^1.12.3",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.2",
+    "vue-router": "^3.0.6",
     "vue-template-compiler": "^2.6.10",
-    "vuex": "^3.1.0",
-    "wendigo": "^1.11.0"
+    "vuex": "^3.1.1",
+    "wendigo": "^2.1.1"
   },
   "peerDependencies": {
-    "wendigo": "^1.11.0"
+    "wendigo": "^2.1.1"
   }
 }

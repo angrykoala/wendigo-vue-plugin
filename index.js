@@ -1,6 +1,5 @@
 "use strict";
 
-
 module.exports = {
     name: "vue",
     plugin: require('./app/plugin/plugin.js'),
