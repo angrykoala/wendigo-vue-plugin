@@ -63,3 +63,4 @@ typings/
 
 .cache
 tests/dummy_server/dist/
+package-lock.json
